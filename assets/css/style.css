@@ -174,6 +174,10 @@ html {
     overflow-y: scroll;
 }
 
+body {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
 /* Align radios and text inputs with their label */
 
 input[type="radio"] {
@@ -240,22 +244,51 @@ sub {
     *zoom: 1;
 }
 
-/* 1.3. Font class declaration
+/* Main page css
 ========================================================================== */
-/*
- * Mention the font property (eg: font-family, font-size, font-weight, font-style
- * etc) that have been commonly used in the html document. Make a class of it and
- * apply to the element wherever it is needed. If any single property in changed,
- * then override only that property in the particular class which is used for the
- * element.
- * (NOTE: Remove this commented code once you start
- * developing the code. Remove the following font class and add your own
- * as this is just and example to let you know. If there is only one font family
- * followed throughout the site, then menstion the font property in body. No need
- * of creating an extra class for it) */
 
-.futura-bold-font {
-    font-family: "Futura Bold", "Gill Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: bold;
+.profile-header {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, rgb(192, 72, 72), rgb(72, 0, 72))
+}
+
+.profile-header h2,
+.profile-header p {
+  color: #fff;
+}
+
+.profile-header h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.profile-header p {
+  font-size: 20px;
+}
+
+.profile-header ul {
+  margin-top: 20px;
+  display: flex;
+  list-style: none;
+}
+
+.profile-header ul li {
+  margin-right: 10px;
+}
+
+.profile-header ul li:last-child {
+  margin: 0;
+}
+
+.profile-header ul li a {
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
 }
