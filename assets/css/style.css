@@ -268,6 +268,7 @@ sub {
 }
 
 .profile-header p {
+  opacity: 0.75;
   font-size: 20px;
 }
 
@@ -291,4 +292,61 @@ sub {
   border-radius: 6px;
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
+}
+
+/* about page css */
+
+object {
+  width: 100%;
+  height: 400px;
+}
+
+.about {
+  margin-bottom: 50px;
+}
+
+.about p {
+  color: #606c71;
+  line-height: 28px;
+  font-size: 17px;
+}
+
+.about .about-work {
+  margin: 40px 0;
+}
+
+.about h4 {
+  color: rgb(192, 72, 72);
+}
+
+.footer {
+  display: flex;
+}
+
+.footer a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: none;
+}
+
+.footer a.btn-linkedin {
+  border-color: rgba(0,0,0,0.2);
+  color: #fff;
+  background-color: #007bb6;
+}
+
+.footer a.btn-github {
+  margin-right: 10px;
+  border-color: rgba(0,0,0,0.2);
+  color: #fff;
+  background-color: #444;
 }
