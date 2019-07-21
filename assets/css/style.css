@@ -296,11 +296,6 @@ sub {
 
 /* about page css */
 
-object {
-  width: 100%;
-  height: 400px;
-}
-
 .about {
   margin-bottom: 50px;
 }
