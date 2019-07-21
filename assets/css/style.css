@@ -368,7 +368,7 @@ sub {
 }
 
 .projects ul {
-  padding-left: 40px;
+  padding-left: 20px;
   list-style: none;
 }
 
@@ -378,14 +378,14 @@ sub {
 }
 
 .projects li span {
-  padding: 5px 5px 0 0;
+  padding: 2px 5px 0 0;
   color: #606c71;
   font-size: 18px;
 }
 
-.projects li a h3 {
-  margin: 15px 0;
+.projects li a h4 {
   font-size: 20px;
+  font-weight: 400;
 }
 
 .projects li p {
