@@ -310,6 +310,10 @@ sub {
   margin: 40px 0;
 }
 
+.about .about-work a {
+  color: #1e6bb8;
+}
+
 .about h4 {
   color: rgb(192, 72, 72);
 }
@@ -344,6 +348,58 @@ sub {
   border-color: rgba(0,0,0,0.2);
   color: #fff;
   background-color: #444;
+}
+
+/* Projects page css */
+
+.projects {
+  margin: 40px 0;
+}
+
+.projects h3 {
+  margin-bottom: 25px;
+  color: rgb(192, 72, 72);
+  font-size: 32px;
+}
+
+.projects a {
+  display: inline-block;
+  color: #1e6bb8;
+}
+
+.projects ul {
+  padding-left: 40px;
+  list-style: none;
+}
+
+.projects li h3 {
+  margin-bottom: 12px;
+  display: flex;
+}
+
+.projects li span {
+  padding: 5px 5px 0 0;
+  color: #606c71;
+  font-size: 18px;
+}
+
+.projects li a h3 {
+  margin: 15px 0;
+  font-size: 20px;
+}
+
+.projects li p {
+  line-height: 25px;
+  color: #606c71;
+  font-size: 17px;
+}
+
+.projects li p a {
+  font-size: 16px;
+}
+
+.projects iframe {
+  max-height: 400px;
 }
 
 /* Media query */
