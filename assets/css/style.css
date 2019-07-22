@@ -372,6 +372,19 @@ sub {
   list-style: none;
 }
 
+.projects li {
+  padding: 25px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.projects li:first-child {
+  padding-top: 0;
+}
+
+.projects li:last-child {
+  border-bottom: 0;
+}
+
 .projects li h3 {
   margin-bottom: 12px;
   display: flex;
