@@ -249,27 +249,22 @@ sub {
 
 .profile-header {
   width: 100%;
-  height: 400px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  background: linear-gradient(to right, rgb(192, 72, 72), rgb(72, 0, 72))
+  justify-content: space-between;
+  background: #000;
 }
 
-.profile-header h2,
-.profile-header p {
-  color: #fff;
+.profile-header h1 {
+  width: 100px;
 }
 
-.profile-header h2 {
-  font-size: 40px;
-  margin-bottom: 20px;
+.profile-header h1 a {
+  display: block;
 }
 
-.profile-header p {
-  opacity: 0.75;
-  font-size: 20px;
+.profile-header h1 a img {
+  width: 100%;
 }
 
 .profile-header ul {
@@ -279,19 +274,53 @@ sub {
 }
 
 .profile-header ul li {
-  margin-right: 10px;
-}
-
-.profile-header ul li:last-child {
-  margin: 0;
+  margin-right: 30px;
 }
 
 .profile-header ul li a {
-  padding: 10px 15px;
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 6px;
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
+}
+
+.profile-header ul li a span.fa {
+  font-size: 25px;
+}
+
+.blog {
+  display: flex;
+  align-items: center;
+}
+
+.blog .my-photo {
+  width: 50%;
+}
+
+.blog .my-photo img {
+  width: 100%;
+  height: calc(100vh - 160px);
+}
+
+.blog .overview {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.blog .overview h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  text-align: right;
+}
+
+.blog .overview h2.coder {
+  color: #666;
+  font-size: 26px;
+}
+
+.blog .overview p {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: right;
 }
 
 /* about page css */
@@ -301,9 +330,8 @@ sub {
 }
 
 .about p {
-  color: #606c71;
   line-height: 28px;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .about .about-work {
@@ -315,22 +343,29 @@ sub {
 }
 
 .about h4 {
-  color: rgb(192, 72, 72);
+  color: #666;
 }
 
 .footer {
+  padding: 30px;
   display: flex;
+  justify-content: space-between;
+  background: #f5f5f5;
+}
+
+.footer.footer-about {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.footer span {
+  color: #666666;
 }
 
 .footer a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  text-decoration: none;
+  
 }
 
 .footer a:hover {
@@ -358,7 +393,7 @@ sub {
 
 .projects h3 {
   margin-bottom: 25px;
-  color: rgb(192, 72, 72);
+  color: #666;
   font-size: 32px;
 }
 
@@ -421,3 +456,19 @@ sub {
 }
 
 /* Media query */
+
+@media (max-width: 768px) {
+  .blog {
+    flex-direction: column;
+  }
+
+  .blog .my-photo {
+    width: inherit;
+    padding: 30px 0;
+  }
+
+  .blog .my-photo img {
+    width: auto;
+    height: 400px;
+  }
+}
