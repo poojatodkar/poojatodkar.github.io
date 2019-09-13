@@ -603,6 +603,10 @@ a.read-more:hover {
     text-align: center;
   }
 
+  .footer.footer-about {
+    position: relative;
+  }
+
   .footer span {
     display: block;
   }
