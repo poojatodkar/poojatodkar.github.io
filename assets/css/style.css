@@ -590,7 +590,25 @@ a.read-more:hover {
 }
 
 @media (max-width: 585px) {
+  .profile-header ul li a {
+    font-size: 12px;
+  }
+
   .recent-work ul li {
     width: 95%;
+  }
+
+  .footer {
+    display: block;
+    text-align: center;
+  }
+
+  .footer span {
+    display: block;
+  }
+
+  .footer a {
+    margin-top: 10px;
+    display: block;
   }
 }
