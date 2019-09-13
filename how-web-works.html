@@ -55,7 +55,90 @@
             <p>
                 Domain Name System (DNS) brings the two together and gets you to your destination.
             </p>
+            <h5>Resolver Server:</h5>
+            <p>
+                Resolver server is usually ISP (Internet Service Provider). All resolvers must know one thing where to
+                locate the root server (knows where to locate .com TLD server i.e Top-Level Domain).
+            </p>
+            <h5>Root Server:</h5>
+            <p> Root servers sit at the top of DNS hierarchy.</p>
+            <img class="root-server" src="./assets/images/dns-root-server.png" alt="DNS Root Server" />
+            <p>The co-ordination of most top-level domains belong to the Internet Corporation for Assigned Names and
+                Numbers (ICANN). The .com TLD was one of the first created in 1985, now the largest TLD on internet.</p>
+            <p>ICANN recognizes the following types of TLDs:</p>
+            <ul class="types-of-tlds">
+                <li>
+                    <p><b>Generic code TLDs:</b> Usually 3 or more letters TLDs like ".net", ".org", ".edu", etc</p>
+                </li>
+                <li>
+                    <p><b>Country code TLDs:</b> 2 letters ISO code like for Japan is ".jp", for Australia is ".au", etc
+                    </p>
+                </li>
+                <li>
+                    <p><b>Internationalized code TLDs:</b> TLDs written in native languages like ".ykp"</p>
+                </li>
+                <li>
+                    <p><b>Infrastructure TLDs:</b> There is only one TLD in this category, which is ".arpa". The
+                        Internet Assigned Numbers Authority controls this TLD for the Internet Engineering Task Force
+                        (IETF).</p>
+                </li>
+            </ul>
+            <p>This image provides a high-level overview of how DNS works:</p>
+            <img class="root-server" src="./assets/images/dns-overview.png" alt="DNS Overview" />
+            <h5>Step 1: Request information</h5>
+            <p>
+                <p>When you ask your computer to resolve a hostname by visiting https://poojatodkar.com, the first thing
+                    your computer does is looks for the corresponding IP address in its local DNS cache, which stores
+                    information that your computer has recently retrieved.</p>
+                <p>If your computer doesn’t already know the answer, it needs to perform a DNS query to find out.</p>
+            </p>
+            <h5>Step 2: Ask the recursive DNS servers</h5>
+            <p>If the information is not stored locally, computer then queries (contacts) the recursive DNS servers
+                (resolvers) from your Internet Service Provider (ISP). These specialized computers perform a DNS query
+                on your behalf. Resolvers have their own caches, and given that many of the ISP’s customers are using
+                the same resolvers, there is a reasonable chance that popular domains will already
+                be cached. If this is the case for our example, poojatodkar.com, the process usually ends here and the
+                information is returned to the user.</p>
+            <p>Just about every ISP runs their own resolvers, yet those aren’t necessarily what you could be using. Some
+                companies and perhaps even technically sophisticated home users could run their own resolvers on site.
+                Additionally, there are several very popular open resolvers available, including Google Public DNS,
+                OpenDNS, etc.</p>
+            <p>So, if recursive DNS server doesn’t know the answer, it then goes to ask root name servers</p>
+            <h5>Step 3: Ask the root name servers</h5>
+            <p>A name server is a computer that answers questions about domain names, such as IP addresses. These 13
+                servers act as a kind of telephone switchboard for DNS. They don’t know the answer, but they can direct
+                DNS queries to someone that knows where to find it.</p>
+            <h5>Step 4: Ask the TLD name servers</h5>
+            <p>The root name servers will look at the first part of our request, reading from right to left,
+                www.poojatodkar.com, and in our case, direct our query to the top-level domain (TLD) name servers for
+                .com.
+                Each TLD, such as those for .com, .org, and .us, has its own set of name servers, which act like a
+                receptionist for each TLD. These servers don’t have the information we need, but they can refer us
+                directly to the servers that do have the information.</p>
+            <h5>Step 5: Ask the authoritative DNS servers</h5>
+            <p>The TLD name servers review the next part of our request, www.poojatodkar.com, and direct our query to
+                the name servers responsible for this specific domain. These authoritative name servers are responsible
+                for knowing all the information about a specific domain, which is stored in DNS records. There are many
+                types of records, which each contain a different kind of information.</p>
+            <p>In this example, we want to know the IP address for www.poojatodkar.com, so we ask the authoritative name
+                server for the address record (A record).
+            </p>
+            <h5>Step 6: Retrieve the record</h5>
+            <p>The recursive server retrieves the A record for poojatodkar.com from the authoritative name servers and
+                stores the record in its local cache. If anyone else requests the host record for poojatodkar.com, the
+                recursive server will already have the answer and will not need to go through the whole lookup process
+                again. All records have an expiration date, so after a while, the recursive server will need to ask for
+                a new copy of the record to make sure the information is not outdated.</p>
+            <h5>Step 7: Receive the answer</h5>
+            <p>Receiving the answer, recursive server returns the A record back to the computer. Your computer stores
+                the record in its cache, reads the IP address from the record, then passes this information to the
+                browser which then opens a connection to the webserver and receives the website.</p>
+            <p>This entire process, from start to finish, takes only milliseconds to complete.</p>
         </div>
+    </div>
+    <div class="footer">
+        <span>&copy; 2019 Pooja Todkar</span>
+        <a href="https://www.instagram.com/pooja_todkar_/">Follow me on Instagram</a>
     </div>
 </body>
 

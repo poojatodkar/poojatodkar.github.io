@@ -286,41 +286,78 @@ sub {
   font-size: 25px;
 }
 
-.blog {
+.main {
+  margin: 40px 0;
+  padding: 0 0 40px 0;
+  border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
 }
 
-.blog .my-photo {
+.main .my-photo {
   width: 50%;
 }
 
-.blog .my-photo img {
+.main .my-photo img {
   width: 100%;
-  height: calc(100vh - 160px);
+  height: auto;
 }
 
-.blog .overview {
+.main .overview {
   width: 100%;
   max-width: 300px;
   margin: 0 auto;
 }
 
-.blog .overview h2 {
+.main .overview h2 {
   margin-bottom: 20px;
   font-size: 32px;
   text-align: right;
 }
 
-.blog .overview h2.coder {
+.main .overview h2.coder {
   color: #666;
   font-size: 26px;
 }
 
-.blog .overview p {
+.main .overview p {
   margin-bottom: 15px;
   font-size: 18px;
   text-align: right;
+}
+
+.recent-work h3 {
+  margin-bottom: 15px;
+}
+
+.recent-work ul {
+  margin-bottom: 40px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.recent-work ul li {
+  width: 32%;
+  padding: 30px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+
+.recent-work ul li a {
+  display: block;
+}
+
+.recent-work ul li a:hover {
+  text-decoration: none;
+  opacity: .7;;
+}
+
+.recent-work ul li h4 {
+  color: #111;
+}
+
+.recent-work ul li p {
+  color: #666;
 }
 
 /* about page css */
@@ -473,7 +510,7 @@ sub {
 
 .blog,
 .how-web-works {
-  margin-top: 40px;
+  margin: 40px 0;
 }
 
 .blog .blog-post h2 a,
@@ -484,7 +521,7 @@ sub {
 }
 
 .blog .blog-post {
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   margin-bottom: 40px;
   border-bottom: 1px solid #ddd;
 }
@@ -513,20 +550,47 @@ a.read-more:hover {
   text-decoration: none;
 }
 
+.how-web-works img.root-server {
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.how-web-works ul.types-of-tlds {
+  padding-left: 35px;
+}
+
 /* Media query */
 
+@media (max-width: 992px) {
+  .recent-work ul {
+    flex-wrap: wrap;
+  }
+
+  .recent-work ul li {
+    width: 48%;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
-  .blog {
+  .main {
     flex-direction: column;
   }
 
-  .blog .my-photo {
+  .main .my-photo {
     width: inherit;
     padding: 30px 0;
   }
 
-  .blog .my-photo img {
+  .main .my-photo img {
     width: auto;
     height: 400px;
+  }
+}
+
+@media (max-width: 585px) {
+  .recent-work ul li {
+    width: 95%;
   }
 }
