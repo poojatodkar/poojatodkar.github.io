@@ -250,6 +250,11 @@ sub {
 #all-comments { display: none !important; }
 .comments-open { display: none !important; }
 
+em {
+  color: #666;
+  font-weight: 600;
+}
+
 .profile-header {
   width: 100%;
   display: flex;
@@ -567,6 +572,18 @@ a.read-more:hover {
 
 .how-web-works ul.types-of-tlds {
   padding-left: 35px;
+}
+
+.references {
+  margin-bottom: 40px;
+  padding: 0 20px;
+  border-left: 5px solid #ccc;
+  font-style: italic;
+  color: #666;
+}
+
+.references p {
+  margin: 0;
 }
 
 /* Media query */

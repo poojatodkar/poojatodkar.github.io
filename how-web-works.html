@@ -87,7 +87,7 @@
             <img class="root-server" src="./assets/images/dns-overview.png" alt="DNS Overview" />
             <h5>Step 1: Request information</h5>
             <p>
-                <p>When you ask your computer to resolve a hostname by visiting https://poojatodkar.com, the first thing
+                <p>When you ask your computer to resolve a hostname by visiting <a href="https://poojatodkar.com">https://poojatodkar.com</a>, the first thing
                     your computer does is looks for the corresponding IP address in its local DNS cache, which stores
                     information that your computer has recently retrieved.</p>
                 <p>If your computer doesn’t already know the answer, it needs to perform a DNS query to find out.</p>
@@ -97,7 +97,7 @@
                 (resolvers) from your Internet Service Provider (ISP). These specialized computers perform a DNS query
                 on your behalf. Resolvers have their own caches, and given that many of the ISP’s customers are using
                 the same resolvers, there is a reasonable chance that popular domains will already
-                be cached. If this is the case for our example, poojatodkar.com, the process usually ends here and the
+                be cached. If this is the case for our example, <em>poojatodkar.com</em>, the process usually ends here and the
                 information is returned to the user.</p>
             <p>Just about every ISP runs their own resolvers, yet those aren’t necessarily what you could be using. Some
                 companies and perhaps even technically sophisticated home users could run their own resolvers on site.
@@ -110,22 +110,22 @@
                 DNS queries to someone that knows where to find it.</p>
             <h5>Step 4: Ask the TLD name servers</h5>
             <p>The root name servers will look at the first part of our request, reading from right to left,
-                www.poojatodkar.com, and in our case, direct our query to the top-level domain (TLD) name servers for
+                <em>www.poojatodkar.com</em>, and in our case, direct our query to the top-level domain (TLD) name servers for
                 .com.
                 Each TLD, such as those for .com, .org, and .us, has its own set of name servers, which act like a
                 receptionist for each TLD. These servers don’t have the information we need, but they can refer us
                 directly to the servers that do have the information.</p>
             <h5>Step 5: Ask the authoritative DNS servers</h5>
-            <p>The TLD name servers review the next part of our request, www.poojatodkar.com, and direct our query to
+            <p>The TLD name servers review the next part of our request, <em>www.poojatodkar.com</em>, and direct our query to
                 the name servers responsible for this specific domain. These authoritative name servers are responsible
                 for knowing all the information about a specific domain, which is stored in DNS records. There are many
                 types of records, which each contain a different kind of information.</p>
-            <p>In this example, we want to know the IP address for www.poojatodkar.com, so we ask the authoritative name
+            <p>In this example, we want to know the IP address for <em>www.poojatodkar.com</em>, so we ask the authoritative name
                 server for the address record (A record).
             </p>
             <h5>Step 6: Retrieve the record</h5>
-            <p>The recursive server retrieves the A record for poojatodkar.com from the authoritative name servers and
-                stores the record in its local cache. If anyone else requests the host record for poojatodkar.com, the
+            <p>The recursive server retrieves the A record for <em>poojatodkar.com</em> from the authoritative name servers and
+                stores the record in its local cache. If anyone else requests the host record for <em>poojatodkar.com</em>, the
                 recursive server will already have the answer and will not need to go through the whole lookup process
                 again. All records have an expiration date, so after a while, the recursive server will need to ask for
                 a new copy of the record to make sure the information is not outdated.</p>
@@ -134,6 +134,11 @@
                 the record in its cache, reads the IP address from the record, then passes this information to the
                 browser which then opens a connection to the webserver and receives the website.</p>
             <p>This entire process, from start to finish, takes only milliseconds to complete.</p>
+        </div>
+        <div class="references">
+            <p>Some parts of this post are with reference to <u>Learning Web Design</u> book written by <u>Jennifer Niederst Robbins</u>.</p>
+            <p>Hope you found this useful.</p>
+            <p>Stay tuned for most posts!!</p>
         </div>
         <div id="disqus_thread"></div>
     </div>
