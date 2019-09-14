@@ -247,6 +247,9 @@ sub {
 /* Main page css
 ========================================================================== */
 
+#all-comments { display: none !important; }
+.comments-open { display: none !important; }
+
 .profile-header {
   width: 100%;
   display: flex;
@@ -386,6 +389,7 @@ sub {
 
 .footer {
   padding: 30px;
+  margin-top: 40px;
   display: flex;
   justify-content: space-between;
   background: #f5f5f5;
@@ -548,6 +552,11 @@ a.read-more {
 a.read-more:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.how-web-works {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
 }
 
 .how-web-works img.root-server {
