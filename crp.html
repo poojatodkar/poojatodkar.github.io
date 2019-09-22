@@ -41,14 +41,14 @@
             <p>
                 Have you ever given a thought to how the code you write actually converts into pixels on the browser?
                 How is actually the page rendered by the browser? What is needed for the browser to render content on
-                the screen? What can be done to optimize page rendering?
+                the screen? What can be done to optimise page rendering?
             </p>
             <p>Answer to all this questions is <b>Critical Rendering Path (CRP)</b></p>
             <h4>What is Critical Rendering Path?</h4>
             <p>Critical Rendering Path is a process that browser undergoes to convert HTML, CSS and JavaScript into
                 pixels on the screen. In short, CRP is just a series of processes that occur to make your webpage appear
-                on a browser. Understanding CRP is really important as it helps optimizing the render time. So
-                optimizing CRP means optimizing the load time and hence improving the performance.</p>
+                on a browser. Understanding CRP is really important as it helps optimising the render time. So
+                optimising CRP means optimising the load time and hence improving the performance.</p>
             <h4>How does CRP work?</h4>
             <p>Critical Rendering Path includes the following steps:</p>
             <ol class="list">
@@ -62,7 +62,7 @@
             <p>DOM defines the logical structure of the documents and the way they can be accessed and manipulated. DOM
                 gets the HTML file as a tree structure where each node is an object representing a part of the document.
             </p>
-            <p>Browswer process the HTML file by converting the bytes into characters, identifying the tokens,
+            <p>Browser process the HTML file by converting the bytes into characters, identifying the tokens,
                 converting tokens into nodes thereby building DOM tree.</p>
             <p>You can check the timeline needed for this process using Chrome dev tools. The browser initially sends
                 request to fetch the HTML file, receiving the response in chunks of data, initializes the HTML parser
@@ -74,7 +74,7 @@
                 have to wait for CSS Object Model (CSSOM), which tells the browser how elements should look when
                 rendered.</p>
             <h5>2. CSS Object Model (CSSOM)</h5>
-            <p>Similar to HTML file, css file is also processed by converting bytes into characters, identifyingthe
+            <p>Similar to HTML file, css file is also processed by converting bytes into characters, identifying the
                 tokens, converting tokens into nodes and building the CSSOM. CSS parser goes through each node and gets
                 the style for each of them.</p>
             <p>CSS is one of the most important elements of the critical rendering path, because the browser blocks page
@@ -96,19 +96,19 @@
             </p>
 
             <h4>Issues that can be faced in CRP</h4>
-            <p>There are many ways wherein the DOM or CSSOM can be manipulated. JavaScript is one of the way to this.
+            <p>There are many ways wherein the DOM or CSSOM can be manipulated. JavaScript is one of the way to do this.
                 Browser has to wait for DOM, download and parse all the CSS files and then execute the JavaScript.</p>
             <p>When the parser finds a script tag it blocks DOM construction, then waits for the browser to get the file
                 and for the javascript engine to parse the script, this is why Javascript is parser blocking.</p>
             <img src="./assets/images/crp_blocked.png" alt="CRP Blocked" />
-            <p>From the above example, we understand how impoprtant CSSOM is, as it is blocking blocking rendering as
+            <p>From the above example, we understand how important CSSOM is, as it is blocking rendering as
                 well as Javascript execution.</p>
             <p>There are only two cases when Javascript does not block on CSSOM:</p>
             <ol class="list">
                 <li>Inlined scripts above the css files '&lt;link&gt;' in the '&lt;head&gt;'</li>
                 <li>Async scripts.</li>
             </ol>
-            <h4>Optimizing the CRP</h4>
+            <h4>Optimising the CRP</h4>
             <p>1. <b>Making JavaScript async</b>: Async scripts don’t block DOM construction and don’t have the need to
                 wait for the CSSOM event, this way your critical rendering path stays free from Javascript interference.
                 This is a crucial part of optimising for the critical rendering path.</p>
