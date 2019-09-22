@@ -518,12 +518,12 @@ em {
 /* blog */
 
 .blog,
-.how-web-works {
+.blog-detail {
   margin: 40px 0;
 }
 
 .blog .blog-post h2 a,
-.how-web-works h2 a {
+.blog-detail h2 a {
   color: #111;
   font-size: 32px;
   text-decoration: none;
@@ -536,7 +536,7 @@ em {
 }
 
 .blog .blog-post h2 a:hover,
-.how-web-works h2 a:hover {
+.blog-detail h2 a:hover {
   color: #666;
 }
 
@@ -559,18 +559,18 @@ a.read-more:hover {
   text-decoration: none;
 }
 
-.how-web-works {
+.blog-detail {
   padding-bottom: 40px;
   border-bottom: 1px solid #ddd;
 }
 
-.how-web-works img.root-server {
+.blog-detail img.root-server {
   max-width: 900px;
   width: 100%;
   margin-bottom: 20px;
 }
 
-.how-web-works ul.types-of-tlds {
+.blog-detail .list {
   padding-left: 35px;
 }
 

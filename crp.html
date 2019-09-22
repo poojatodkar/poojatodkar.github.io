@@ -1,0 +1,168 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" media="screen" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="profile-header text-capitalize">
+        <h1>
+            <a href="/"><img src="./assets/images/portfolio-logo.jpg" /></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="/blog">blog</a>
+            </li>
+            <li>
+                <a href="/about">about</a>
+            </li>
+            <li>
+                <a href="/projects">projects</a>
+            </li>
+            <li>
+                <a class="btn-github" href="https://github.com/poojatodkar" target="_blank">
+                    <span class="fa fa-github"></span>
+                </a>
+            </li>
+            <li>
+                <a class="btn-linkedin" href="https://www.linkedin.com/in/pooja-todkar-237aba164/" target="_blank">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="blog-detail">
+            <h2>Critical Rendering Path (CRP)</h2>
+            <p>
+                Have you ever given a thought to how the code you write actually converts into pixels on the browser?
+                How is actually the page rendered by the browser? What is needed for the browser to render content on
+                the screen? What can be done to optimize page rendering?
+            </p>
+            <p>Answer to all this questions is <b>Critical Rendering Path (CRP)</b></p>
+            <h4>What is Critical Rendering Path?</h4>
+            <p>Critical Rendering Path is a process that browser undergoes to convert HTML, CSS and JavaScript into
+                pixels on the screen. In short, CRP is just a series of processes that occur to make your webpage appear
+                on a browser. Understanding CRP is really important as it helps optimizing the render time. So
+                optimizing CRP means optimizing the load time and hence improving the performance.</p>
+            <h4>How does CRP work?</h4>
+            <p>Critical Rendering Path includes the following steps:</p>
+            <ol class="list">
+                <li>Document Object Model (DOM)</li>
+                <li>CSS Object Model (CSSOM)</li>
+                <li>Render Tree</li>
+                <li>Layout</li>
+                <li>Paint</li>
+            </ol>
+            <h5>1. Document Object Model (DOM)</h5>
+            <p>DOM defines the logical structure of the documents and the way they can be accessed and manipulated. DOM
+                gets the HTML file as a tree structure where each node is an object representing a part of the document.
+            </p>
+            <p>Browswer process the HTML file by converting the bytes into characters, identifying the tokens,
+                converting tokens into nodes thereby building DOM tree.</p>
+            <p>You can check the timeline needed for this process using Chrome dev tools. The browser initially sends
+                request to fetch the HTML file, receiving the response in chunks of data, initializes the HTML parser
+                and if parser finds any links for CSS or JavaScript, it then sends requests for them. Similarly, browser
+                sends requests for all other assets found in rest of the page as well.</p>
+            <p>So processing the HTML file can significantly take a large amount of time which means initial size of DOM
+                tree will have a performance cost.</p>
+            <p>On finishing this process, browser will have the entire content to be displayed on the screen but will
+                have to wait for CSS Object Model (CSSOM), which tells the browser how elements should look when
+                rendered.</p>
+            <h5>2. CSS Object Model (CSSOM)</h5>
+            <p>Similar to HTML file, css file is also processed by converting bytes into characters, identifyingthe
+                tokens, converting tokens into nodes and building the CSSOM. CSS parser goes through each node and gets
+                the style for each of them.</p>
+            <p>CSS is one of the most important elements of the critical rendering path, because the browser blocks page
+                rendering until it receives and processes all the css files in your page, <b>CSS is render blocking</b>.
+            </p>
+            <h5>3. Render Tree</h5>
+            <p>Once the DOM and CSSOM are created, browser then combines both to output a final render tree, which
+                contains both the content and the style information of all the visible content on the screen</p>
+            <h5>4. Layout</h5>
+            <p>As the name suggests, once the render tree is ready, browser needs to decide the size and position of
+                each visible element on the screen. Every time DOM or CSSOM changes, render tree updates thus leading
+                the browser to re-run the layout in order to update the size and position of elements.</p>
+            <h5>5. Paint</h5>
+            <p>The last step is painting the pixels to the screen using the layout results. The entire screen is painted
+                on initial load, later only the impacted areas will be repainted depending on the updates being applied
+                to the render tree</p>
+            <p>Note: Not all styles will have the same paint times. For example, an element positioned using
+                <em>"transform translate"</em> may have larger paint times than one positioned using <em>"position"</em>
+            </p>
+
+            <h4>Issues that can be faced in CRP</h4>
+            <p>There are many ways wherein the DOM or CSSOM can be manipulated. JavaScript is one of the way to this.
+                Browser has to wait for DOM, download and parse all the CSS files and then execute the JavaScript.</p>
+            <p>When the parser finds a script tag it blocks DOM construction, then waits for the browser to get the file
+                and for the javascript engine to parse the script, this is why Javascript is parser blocking.</p>
+            <img src="./assets/images/crp_blocked.png" alt="CRP Blocked" />
+            <p>From the above example, we understand how impoprtant CSSOM is, as it is blocking blocking rendering as
+                well as Javascript execution.</p>
+            <p>There are only two cases when Javascript does not block on CSSOM:</p>
+            <ol class="list">
+                <li>Inlined scripts above the css files '&lt;link&gt;' in the '&lt;head&gt;'</li>
+                <li>Async scripts.</li>
+            </ol>
+            <h4>Optimizing the CRP</h4>
+            <p>1. <b>Making JavaScript async</b>: Async scripts don’t block DOM construction and don’t have the need to
+                wait for the CSSOM event, this way your critical rendering path stays free from Javascript interference.
+                This is a crucial part of optimising for the critical rendering path.</p>
+            <p>2. <b>Making our critical assets as small as possible</b> by minifying and compressing both the html and
+                css.</p>
+            <p>3. <b>Inline the css</b>, so that we can get it to the client with the first html request, allowing the
+                browser to
+                get to the CSSOM event with only one request. But this would make the first initial request heavy, so
+                here we can inline only the css for the header and the main page, and downloading the remaining css
+                async.</p>
+            <p>4. <b>Using async webfonts</b></p>
+            <h4>Conclusion</h4>
+            <p>Understanding how a browser works and how it gets the content needed to render the page, is essential for
+                optimising the critical rendering path. Also, design simplicity and thinking about performance since day
+                one, are essential elements to
+                achieve instant experience.</p>
+            <p>As we all may agree on this, it’s always better to render something as fast as possible to the page, than
+                having your users staring at a blank screen.</p>
+            <div class="references">
+                <p>This post is solely based on my understandings from <a
+                        href="https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path#Understanding_CRP"
+                        target="_blank">Critical Rendering Path Blog</a></p>
+            </div>
+            <p>Written on 22nd September, 2019</p>
+            <div id="disqus_thread"></div>
+        </div>
+        <script>
+            /**
+             *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+             *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+             */
+            /*
+            */
+            var disqus_config = function () {
+                this.page.url = 'https://poojatodkar.com';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = 'poojatodkar'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            (function () {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = 'https://poojatodkar.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript"
+                rel="nofollow">comments
+                powered by Disqus.</a></noscript>
+    </div>
+    <div class="footer">
+        <span>&copy; 2019 Pooja Todkar</span>
+        <a href="https://www.instagram.com/pooja_todkar_/">Follow me on Instagram</a>
+    </div>
+</body>
+
+</html>
