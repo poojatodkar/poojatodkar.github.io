@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" media="screen" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="profile-header text-capitalize">
+        <h1>
+            <a href="/"><img src="./assets/images/portfolio-logo.jpg" /></a>
+        </h1>
+        <ul>
+            <li>
+                <a href="/blog">blog</a>
+            </li>
+            <li>
+                <a href="/about">about</a>
+            </li>
+            <li>
+                <a href="/projects">projects</a>
+            </li>
+            <li>
+                <a class="btn-github" href="https://github.com/poojatodkar" target="_blank">
+                    <span class="fa fa-github"></span>
+                </a>
+            </li>
+            <li>
+                <a class="btn-linkedin" href="https://www.linkedin.com/in/pooja-todkar-237aba164/" target="_blank">
+                    <span class="fa fa-linkedin"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="blog-detail">
+            <h2>AngularJS Components vs Directives</h2>
+            <p>
+                Components vs Directives - an interview question definitely asked to an AngularJS developer. This is
+                because, until angular 1.5, directives were such an important part of AngularJS. Later, angular
+                introduced a new element called <em>component</em>. Component is a special kind of directive.
+                Component eventually led the angular to the next level which is Angular 2. All angular 2 plus
+                versions are based on component-based structure.
+            </p>
+            <p>So what is a directive and what is a component and what is the difference between them?</p>
+            <h5>What is Directive?</h5>
+            <p>AngularJS definition for directive is:</p>
+            <p>
+                <em>
+                    Directives are markers on DOM element (such as an attribute('A'), element name('E'), comment('M') or
+                    CSS class('C')) that tell AngularJS's HTML compiler ($complile) to attach a specified behavior to
+                    that DOM element (e.g. via event listeners), or even to transform DOM element and its children.
+                </em>
+            </p>
+            <p>This is the reason directives are of such importance in Angular since they have the power to manipulate
+                the DOM (Document Object Model) and create new custom elements which are part of the DOM.</p>
+            <h5>What is Component?</h5>
+            <p>
+                <em>
+                    Component, as it means is an independent block of code. As said, in angular, component is a special
+                    kind of directive that uses a simpler configuration suitable for component-based application
+                    structure which makes it simpler to use as compared to directives.
+                </em>
+            </p>
+            <h5>What is the difference between a component and a directive?</h5>
+            <p>Unlike directives, component is always elements('E') which means it should always require a template. So,
+                the first difference is a template is a mandatory property to a component whereas template is not
+                mandatory in directives.</p>
+            <h5>Isolating scope of directive:</h5>
+            <p>Directives can modify DOM or data that is outside of their scope typically using the link function to
+                register DOM listeners as well as update the DOM</p>
+            <pre>function link(scope, element, attrs, controller, transclude(fn) { ----- }</pre>
+            <ul>
+                <li>scope is an AngularJS object.</li>
+                <li>element is jqLite wrapped element that this directive matches.</li>
+                <li>attrs is a hash object with key-value pairs of normalized attribute names and corresponding
+                    attribute values.</li>
+                <li>controller is directive's required controller instance(s) or its own controller</li>
+                <li>transclude(fn) is a transclude linking function pre-bound to correct transclusion scope. It makes
+                    the content of a directive with this option have access to the scope outside of the directive rather
+                    than inside.</li>
+            </ul>
+            <p>Unlike directives, the component can only access data within isolated scope. The main reason to avoid
+                adding these features to a component is to prevent additional complexity. Because when the problem
+                occurs it is very difficult to identify which part of the application responsible for modifying data</p>
+            <p>Another difference is no more DOM manipulation in component-based structure, a component doesn't have a
+                "link" function. in angular docs its clearly state that if you want to perform pre-link, compile then go
+                with the directives. in the component, those features are not available.</p>
+            <h5>Reusable components vs reusable directive behaviors:</h5>
+            <p>The component-based structure has set of components that independently control their own view and data
+                without conflicting one another. For example, YouTube. YouTube video is one component, comment is
+                another one. The list of videos is another component which updates real time. They all exist in the same
+                space but independent from other components. Angular components also follow the component-based
+                structure. </p>
+            <p>With the help of the component, we can divide the application into smaller reusable components.
+                Directives in the other hand more focus on the behaviors. it can add behaviors to existing DOM elements.
+                Hence, Angular components are reusable components while directives use to create
+                reusable behaviors.</p>
+            <h5>Communication between components:</h5>
+            <p>Directives have the ability to communicate with other directive controllers.This can be achieved in a
+                component by providing an object mapping for the require property. The object can be assigned to require
+                property where the key is a property name that binds the required controller. Consider the following
+                example</p>
+            <pre>
+                .component('myPosts', {
+                    require: {
+                        messageCtrl: '^myMessages'
+                    },
+                    controller: function() {
+                        this.$onInit = function() {
+                            this.messageCtrl.addMessage(this);
+                            console.log(this);
+                        };
+                    },
+                    templateUrl: 'my-posts.html'
+                });
+            </pre>
+            <p>
+                Here myPosts component can access the myMessages component controller through the this.messageCtrl
+                property. The required controllers will not be available during the instantiation of the controller, but
+                they are guaranteed to be available just before the $onInit method is executed.
+            </p>
+            <h5>Life cycle events of component and directive:</h5>
+            <p>Directive and component instances have a lifecycle as Angular creates, updates, and destroys them.
+                Angular offers lifecycle hooks that provide visibility into these key life moments and the ability to
+                act when they occur. Directives are consisted with compile, link and controller hooks to complete its
+                life cycle. A component has a controller but no link functions since it’s primary use is to create
+                reusable components. Component has its own lifecycle hooks like $onInit(), $onChanges(), $doCheck(),
+                $onDestroy() etc.</p>
+            <h5>When not to use components:</h5>
+            <ul>
+                <li>For directives that need to perform actions in compile and pre-link function because they aren't
+                    available.</li>
+                <li>When you need advanced directive definition option like priority, terminal, multi-element</li>
+                <li>When you want a directive i.e. trigerred by an attribute or CSS class rather than an element.</li>
+            </ul>
+        </div>
+        <div class="references">
+            <p>This post is solely based on my understandings from <a href="https://angular.io/" target="_blank">AngularJS Tutorial</a></p>
+        </div>
+        <p>Written on 15th December, 2019</p>
+        <div id="disqus_thread"></div>
+    </div>
+    <script>
+        /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+            */
+        /*
+        */
+        var disqus_config = function () {
+            this.page.url = 'https://poojatodkar.com';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = 'poojatodkar'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        (function () {  // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+
+            s.src = 'https://poojatodkar.disqus.com/embed.js';
+
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments
+            powered by Disqus.</a></noscript>
+
+    <div class="footer">
+        <span>&copy; 2019 Pooja Todkar</span>
+        <a href="https://www.instagram.com/pooja_todkar_/">Follow me on Instagram</a>
+    </div>
+</body>
+
+</html>
