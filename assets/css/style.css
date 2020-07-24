@@ -1124,6 +1124,10 @@ footer .footnote .highlight {
   #carousel {
     left: -300px !important;
   }
+
+  section:nth-of-type(3) #gallery .mix  {
+    max-width: 350px;
+  }
 }
 
 @media screen and (min-width: 600px) {
