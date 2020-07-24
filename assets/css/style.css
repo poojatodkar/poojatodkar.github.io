@@ -1109,7 +1109,7 @@ footer .footnote .highlight {
 @media screen and (max-width: 585px) {
   section:nth-of-type(3) #gallery .mix .card {
     width: 100vw;
-    background-size: contain;
+    background-size: contain !important;
   }
 
   .modal-wrap .modal {
