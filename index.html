@@ -1,43 +1,43 @@
-<!doctype html>
+<!-- <!doctype html> -->
 
 <!-- If multi-language site, reconsider usage of html lang declaration here. -->
-<html lang="en">
+<!-- <html lang="en">
 
 <head>
 
-	<meta charset="utf-8">
+	<meta charset="utf-8"> -->
 
-	<title>Client | Page Title</title>
+	<!-- <title>Client | Page Title</title> -->
 
 	<!-- 120 word description for SEO purposes goes here. Note: Usage of lang tag. -->
-	<meta name="description" lang="en" content="">
+	<!-- <meta name="description" lang="en" content=""> -->
 
 	<!-- Keywords to help with SEO go here. Note: Usage of lang tag.  -->
-	<meta name="keywords" lang="en" content="">
+	<!-- <meta name="keywords" lang="en" content=""> -->
 
 	<!-- View-port Basics: http://mzl.la/VYREaP -->
 	<!-- This meta tag is used for mobile device to display the page without any zooming,
        so how much the device is able to fit on the screen is what's shown initially.
        Remove comments from this tag, when you want to apply media queries to the website. -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> -->
 
 	<!-- Default style-sheet is for 'media' type screen (color computer display).  -->
-	<link rel="stylesheet" media="screen" href="./assets/css/style.css">
+	<!-- <link rel="stylesheet" media="screen" href="./assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
 	<!-- html5shiv aka html5 shim. Supporting HTML5 and CSS for IE browsers less than IE9. -->
 	<!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-</head>
+<!-- </head>
 
-<body>
+<body> -->
 	<!--  <script src="js/vendors/jquery-1.8.3.min.js"></script>
  <script src="js/script.js"></script> -->
-	<div class="profile-header text-capitalize">
+	<!-- <div class="profile-header text-capitalize">
 		<h1>
 			<a href="/"><img src="./assets/images/portfolio-logo.jpg" alt="logo" /></a>
 		</h1>
@@ -104,4 +104,471 @@
 	</div>
 </body>
 
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,600italic,300italic,400italic,300,700italic,800italic,800"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha512-NnVk8J+OfDgRTg94+kSCxbqR05WJxnT1Qua74vr7BZhTEyYWKm9R2eu+tnnHAPSxTMKleqosGl6P0lWLcu85aA==" crossorigin="anonymous" />
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+    <script src="./scripts/index.js"></script>
+    <script src="./scripts/modal.js"></script>
+  </head>
+  <body>
+    <div class="overflow-wrap">
+      <!-- HOME -->
+      <div class="modal-wrap flex">
+        <div class="mask"></div>
+        <div class="modal" id="modal">
+          <div class="carousel-wrap">
+            <div class="window">
+              <div id="carousel">
+                <div class="slide"></div>
+                <div class="slide"></div>
+                <div class="slide"></div>
+              </div>
+              <i class="mdi mdi-chevron-left" id="prev"></i>
+              <i class="mdi mdi-chevron-right" id="next"></i>
+            </div>
+          </div>
+          <div class="info-box">
+            <div class="title"></div>
+            <div class="tag"></div>
+            <div class="detail"></div>
+            <a href="#" target="_blank"
+              ><div class="button">
+                <i class="mdi mdi-open-in-new"></i>VIEW SITE
+              </div></a
+            >
+          </div>
+          <i class="close mdi mdi-close"></i>
+        </div>
+      </div>
+
+      <section id="home" class="flex height-fix">
+        <div id="pt" class="canvas"></div>
+        <div class="flex">
+          <div class="text">
+            Hello, I'm <span class="highlight">Pooja Todkar</span>.
+            <br />
+            I'm a Software Engineer.
+          </div>
+
+          <div class="button page-link" dest="about">
+            View my work <i class="mdi mdi-arrow-right"></i>
+          </div>
+
+          <nav class="flex">
+            <div class="link-wrap">
+              <div class="active page-link" dest="home">home</div>
+              <div class="page-link" dest="about">about</div>
+              <div class="page-link" dest="portfolio">projects</div>
+              <div class="page-link" dest="blog">blog</div>
+              <div class="page-link" dest="contact">contact</div>
+            </div>
+            <i class="mdi mdi-menu"></i>
+          </nav>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container flex">
+          <div class="header waypoint" data-animation="slide-in-left">
+            ABOUT
+          </div>
+          <div
+            class="header-bar waypoint"
+            data-animation="slide-in-left"
+            data-delay=".5s"
+          ></div>
+
+          <div class="skills-wrapper flex row-gt-sm">
+            <div
+              class="flex flex-50-gt-sm waypoint"
+              data-animation="slide-in-left"
+            >
+              <img src="./assets/images/my-photo.jpg" class="me" />
+              <div>
+                <p>
+                  I'm a Software Engineer at
+                  <a
+                    class="highlight"
+                    href="http://www.coverfox.com"
+                    target="_blank"
+                  >Coverfox Insurance
+                  </a>
+                  based in Mumbai.
+                </p>
+                <p>I've over 4 years of experience working on JavaScript and Python tech-stack (ReactJs, VueJS, KnockoutJS, AngularJs, NodeJs, SailsJs, ExpressJs, Python, Django). Also, I've experience working on RESTful APIs and GraphQL.</p>
+                <p>
+                  Previously, I worked with
+                  <a
+                    class="highlight"
+                    href="http://www.peoplegrove.com"
+                    target="_blank"
+                  >PeopleGrove Inc, 
+                  </a>
+                  <a
+                    class="highlight"
+                    href="http://www.infojiniconsulting.com"
+                    target="_blank"
+                  >Infojini Inc
+                  </a>
+                  and
+                  <a
+                    class="highlight"
+                    href="http://www.prdxn.com"
+                    target="_blank"
+                  >PRDXN
+                  </a> in IT services and contributed to development of products like Montessori Connect, HappyFeet, Alumni Connect, developed multiple websites, CMS, CRM and worked on internal projects.
+                </p>
+                <p>I work to create high performance & rich interactive websites that work across all platforms & devices.</p>
+                <p>I have a very keen interest for Machine Learning and Artificial Intelligence.</p>
+                <p>Apart from this, I love dancing and singing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO -->
+      <section class="flex" id="portfolio">
+        <div class="header waypoint" data-animation="slide-in-right">
+          PROJECTS
+        </div>
+        <div
+          class="header-bar waypoint"
+          data-animation="slide-in-right"
+          data-delay=".3s"
+        ></div>
+
+        <div class="filter-wrap waypoint" data-animation="fade-in">
+          <div class="flex row">
+            <div class="filter" data-filter="all">ALL</div>
+            <div class="filter" data-filter=".js">JAVASCRIPT</div>
+            <div class="filter" data-filter=".py">PYTHON</div>
+          </div>
+          <div class="float-bar">
+            <div class="flex row">
+              <div class="filter" data-filter="all">ALL</div>
+              <div class="filter" data-filter=".js">JAVASCRIPT</div>
+              <div class="filter" data-filter=".py">PYTHON</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="gallery" class="container flex row wrap waypoint">
+          <div class="mix py" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Coverfox CRM</div>
+                <span class="highlight">Knockout JS / Django</span>
+              </div>
+              <div class="button" id="coverfoxcrm">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix py" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Coverfox</div>
+                <span class="highlight">React JS / Vue JS / Django</span>
+              </div>
+              <div class="button" id="coverfox">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix py" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">CFSupport</div>
+                <span class="highlight">Knockout JS / Django</span>
+              </div>
+              <div class="button" id="cfsupport">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Campus Kudos</div>
+                <span class="highlight">Angular JS / React JS / Node.js</span>
+              </div>
+              <div class="button" id="campuskudos">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Montessori Connect</div>
+                <span class="highlight">Angular JS / Node JS</span>
+              </div>
+              <div class="button" id="vdm">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">GetThereSCNY CMS</div>
+                <span class="highlight">Angular JS / Node JS</span>
+              </div>
+              <div class="button" id="mmscnycms">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">GetThereSCNY</div>
+                <span class="highlight">Angular JS / Node JS</span>
+              </div>
+              <div class="button" id="mmscny">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">TalentDome</div>
+                <span class="highlight">React JS / Node JS with GraphQL</span>
+              </div>
+              <div class="button" id="talentdome">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Chat App</div>
+                <span class="highlight">Node JS</span>
+              </div>
+              <div class="button" id="chatapp">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Tic Tac Toe</div>
+                <span class="highlight">React JS</span>
+              </div>
+              <div class="button" id="tictactoe">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">Weather Forecast App</div>
+                <span class="highlight">React JS</span>
+              </div>
+              <div class="button" id="weatherforecast">LEARN MORE</div>
+            </div>
+          </div>
+
+          <div class="mix js" data-my-order="1">
+            <div>
+              <div class="card"></div>
+              <div class="text">
+                <div class="bold">ProductHunt</div>
+                <span class="highlight">React JS / Node JS</span>
+              </div>
+              <div class="button" id="producthunt">LEARN MORE</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section id="blog">
+        <div class="container flex">
+          <div class="header waypoint" data-animation="slide-in-left">BLOG</div>
+          <div
+            class="header-bar waypoint"
+            data-animation="slide-in-left"
+            data-delay=".5s"
+          ></div>
+
+          <div class="flex row wrap">
+            <div class="flex row-gt-sm">
+              <a
+                href="https://medium.com/@poojatodkar/how-web-works-c7dd84e5457b"
+                target="_blank"
+              >
+                <div class="blog-wrap waypoint" data-animation="fade-in">
+                  <div class="fade-wrap">
+                    <div class="thumb" id="thumb-1"></div>
+                    <div class="label bold">How Web Works?</div>
+                    <div class="date">September 14, 2019</div>
+                    <div class="bar"></div>
+                    <div class="text">
+                      From my experience of interviewing developers, I was surprised to know how many developers have only a very limited or even no understanding of how the DNS process actually works...
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://medium.com/@poojatodkar/critical-rendering-path-crp-7a56d8f67871"
+                target="_blank"
+              >
+                <div
+                  class="blog-wrap waypoint"
+                  data-animation="fade-in"
+                  data-delay=".2s"
+                >
+                  <div class="fade-wrap">
+                    <div class="thumb" id="thumb-2"></div>
+                    <div class="label bold">
+                      Critical Rendering Path (CRP)
+                    </div>
+                    <div class="date">Written on 22nd September, 2019</div>
+                    <div class="bar"></div>
+                    <div class="text">
+                      Have you ever given a thought to how the code you write actually converts into pixels on the browser?...
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="flex row-gt-sm">
+              <a
+                href="https://medium.com/@poojatodkar/angularjs-components-vs-directives-da46d4ae7ade"
+                target="_blank"
+              >
+                <div
+                  class="blog-wrap waypoint"
+                  data-animation="fade-in"
+                  data-delay=".4s"
+                >
+                  <div class="fade-wrap">
+                    <div class="thumb" id="thumb-3"></div>
+                    <div class="label bold">AngularJS Components vs Directives</div>
+                    <div class="date">15th December, 2019</div>
+                    <div class="bar"></div>
+                    <div class="text">
+                      Components vs Directives — an interview question definitely asked to an AngularJS developer. This is because,...
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <svg
+          preserveAspectRatio="none"
+          viewBox="0 0 100 102"
+          height="75"
+          width="100%"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          class="svgcolor-light"
+        >
+          <path d="M0 0 L50 100 L100 0 Z" fill="white" stroke="white"></path>
+        </svg>
+        <div class="container flex">
+          <div class="header waypoint" data-animation="slide-in-left">
+            CONTACT
+          </div>
+          <div
+            class="header-bar waypoint"
+            data-animation="slide-in-right"
+            data-delay=".25s"
+          ></div>
+          <div
+            class="highlight waypoint"
+            data-animation="slide-in-right"
+            data-delay=".5s"
+          >
+            Mail: poojatodkar0594 [at] gmail [dot] com
+        </div>
+        </div>
+      </section>
+
+      <footer>
+        <i class="mdi mdi-chevron-double-up page-link" dest="home"></i>
+
+        <div class="icon-wrap flex row">
+          <a href="https://www.linkedin.com/in/poojatodkar">
+            <div class="flex icon" id="icon-2">
+              <i class="mdi mdi-linkedin"></i>
+            </div>
+          </a>
+          <a href="https://www.instagram.com/pooja_todkar_/">
+            <div class="flex icon" id="icon-4">
+              <i class="mdi mdi-instagram"></i>
+            </div>
+          </a>
+          <a href="https://github.com/poojatodkar/">
+            <div class="flex icon" id="icon-5">
+              <i class="mdi mdi-github"></i>
+            </div>
+          </a>
+        </div>
+        <div class="info-box">
+          <div class="footnote">
+            POOJA TODKAR <span class="highlight">&copy;2020</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div id="preload">
+      <img src="./assets/images/my-photo.jpg" />
+      <img src="./assets/images/bg-img.jpg" />
+      <img src="./assets/images/how-web-works.jpg" />
+      <img src="./assets/images/critical-rendering-path.jpg" />
+      <img src="./assets/images/angularjs-blog.jpg" />
+      <img src="./assets/images/coverfoxcrm-0.jpg" />
+      <img src="./assets/images/coverfoxcrm-1.jpg" />
+      <img src="./assets/images/coverfoxcrm-2.jpg" />
+      <img src="./assets/images/coverfoxcrm-3.jpg" />
+      <img src="./assets/images/coverfox-0.jpg" />
+      <img src="./assets/images/coverfox-1.jpg" />
+      <img src="./assets/images/coverfox-2.jpg" />
+      <img src="./assets/images/coverfox-3.jpg" />
+      <img src="./assets/images/cfsupport-0.jpg" />
+      <img src="./assets/images/cfsupport-1.jpg" />
+      <img src="./assets/images/cfsupport-2.jpg" />
+      <img src="./assets/images/cfsupport-3.jpg" />
+    </div>
+  </body>
 </html>
