@@ -1,5 +1,5 @@
-$(function () {
-  var isMobile;
+$(() => {
+  let isMobile;
   if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
@@ -8,8 +8,8 @@ $(function () {
     isMobile = true;
 
     // Mobile height fix
-    $('.height-fix').each(function () {
-      var h = $(this).height();
+    $('.height-fix').each(() => {
+      let h = $(this).height();
       $(this).height(h);
     });
   }
@@ -27,14 +27,14 @@ $(function () {
   }
 
   // NAV POSITION
-  var navPos = $('nav').position().top;
-  var lastPos = 0;
-  var lockTimer;
+  const navPos = $('nav').position().top;
+  let lastPos = 0;
+  let lockTimer;
 
-  $(window).on('scroll', function () {
-    var pos = $(window).scrollTop();
-    var pos2 = pos + 50;
-    var scrollBottom = pos + $(window).height();
+  $(window).on('scroll', () => {
+    const pos = $(window).scrollTop();
+    const pos2 = pos + 50;
+    const scrollBottom = pos + $(window).height();
 
     if (!isMobile) {
       if (pos >= navPos + $('nav').height() && lastPos < pos) {
@@ -72,7 +72,7 @@ $(function () {
       $('body').addClass('disable-hover');
     }
 
-    lockTimer = setTimeout(function () {
+    lockTimer = setTimeout(() => {
       $('body').removeClass('disable-hover');
     }, 500);
   });
@@ -86,7 +86,7 @@ $(function () {
 
   // EVENT HANDLERS
   $('.page-link').click(function () {
-    var anchor = $(this).attr('dest');
+    const anchor = $(this).attr('dest');
     $('.link-wrap').removeClass('visible');
 
     $('nav span').removeClass('active');
@@ -102,7 +102,7 @@ $(function () {
     );
   });
 
-  $('.mdi-menu').click(function () {
+  $('.mdi-menu').click(() => {
     $('.link-wrap').toggleClass('visible');
   });
 
@@ -126,10 +126,10 @@ $(function () {
   });
 
   function posFilterBar(elem) {
-    var origin = $(elem)
+    const origin = $(elem)
       .parent()
       .offset().left;
-    var pos = $(elem).offset().left;
+    const pos = $(elem).offset().left;
     $('.float-bar').css({
       left: pos - origin,
       width: $(elem).innerWidth()
@@ -148,9 +148,9 @@ $(function () {
 
   // SCROLL ANIMATIONS
   function onScrollInit(items, elemTrigger) {
-    var offset = $(window).height() / 1.6;
+    const offset = $(window).height() / 1.6;
     items.each(function () {
-      var elem = $(this),
+      let elem = $(this),
         animationClass = elem.attr('data-animation'),
         animationDelay = elem.attr('data-delay');
 
@@ -160,7 +160,7 @@ $(function () {
         'animation-delay': animationDelay
       });
 
-      var trigger = elemTrigger ? trigger : elem;
+      let trigger = elemTrigger ? trigger : elem;
 
       trigger.waypoint(
         function () {

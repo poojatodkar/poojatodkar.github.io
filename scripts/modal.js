@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(() => {
   // MODAL
-  var modalText = {
+  const modalText = {
     coverfoxcrm: {
       title: 'Coverfox CRM',
       tag: 'COVERFOX CRM TOOL.',
@@ -99,7 +99,7 @@ $(document).ready(function () {
     $('.modal-wrap, #modal .button').removeClass('visible');
   });
 
-  var carousel = $('#carousel'),
+  let carousel = $('#carousel'),
     slideWidth = 700,
     threshold = slideWidth / 3,
     dragStart,
@@ -107,21 +107,21 @@ $(document).ready(function () {
 
   setDimensions();
 
-  $('#next').click(function () {
+  $('#next').click(() => {
     shiftSlide(-1);
   });
-  $('#prev').click(function () {
+  $('#prev').click(() => {
     shiftSlide(1);
   });
 
-  carousel.on('mousedown', function () {
+  carousel.on('mousedown', () => {
     if (carousel.hasClass('transition')) return;
     dragStart = event.pageX;
-    $(this).on('mousemove', function () {
+    $(this).on('mousemove', () => {
       dragEnd = event.pageX;
       $(this).css('transform', 'translateX(' + dragPos() + 'px)');
     });
-    $(document).on('mouseup', function () {
+    $(document).on('mouseup', () => {
       if (dragPos() > threshold) {
         return shiftSlide(1);
       }
@@ -157,7 +157,7 @@ $(document).ready(function () {
       .off('mousemove')
       .addClass('transition')
       .css('transform', 'translateX(' + direction * slideWidth + 'px)');
-    setTimeout(function () {
+    setTimeout(() => {
       if (direction === 1) {
         $('.slide:first').before($('.slide:last'));
       } else if (direction === -1) {
