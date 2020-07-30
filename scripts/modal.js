@@ -178,10 +178,10 @@ $(document).ready(() => {
         .parent()
         .attr('href', modalText[id].link);
 
-    $.each($('#modal li'), function (index, value) {
+    $.each($('#modal li'), function (index) {
       $(this).text(modalText[id].bullets[index]);
     });
-    $.each($('#modal .slide'), function (index, value) {
+    $.each($('#modal .slide'), function (index) {
       $(this).css({
         background:
           "url('./assets/images/" + id + '-' + index + ".jpg') center center/contain no-repeat",
